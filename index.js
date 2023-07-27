@@ -5,7 +5,7 @@ const restapi_url = 'https://restcountries.com/v3.1/all';
 async function getapi(url){
      const response = await fetch(url);
 
-     let data = await response.json()
+     let data = await response.json() 
      console.log(data);
      if(response){
         hideloader()
@@ -44,7 +44,20 @@ function show(data){
 
 }
     document.getElementById("countries").innerHTML = tab;
+    // Add event listeners to country links
+  const countryLinks = document.getElementsByClassName("country-link");
+  for (const link of countryLinks) {
+    link.addEventListener("click", handleCountryLinkClick);
+  }
 }
+
+
+function handleCountryLinkClick(event) {
+    event.preventDefault();
+    const countryCode = event.currentTarget.dataset.code;
+    // Redirect to the country.html page with the selected country code as a query parameter
+    window.location.href = `country.html?code=${countryCode}`;
+  }
 
 //searchInput
 const searchInput = document.getElementById('searchInput');

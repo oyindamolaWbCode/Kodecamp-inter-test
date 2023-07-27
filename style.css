@@ -71,7 +71,7 @@ button{
     padding:60px 50px;
 }
 
-.country-section{
+#country-container{
     display: grid;
     grid-template-columns: auto auto ;
     margin-top: 60px;
@@ -80,6 +80,12 @@ button{
 .flags{
     display: grid;
     grid-template-columns: auto auto ;
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 /* media queries */
 
