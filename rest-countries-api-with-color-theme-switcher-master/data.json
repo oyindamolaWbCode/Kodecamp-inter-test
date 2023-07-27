@@ -17,7 +17,7 @@
     "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
     "nativeName": "افغانستان",
     "numericCode": "004",
-    "flags": {
+    "flags": { 
       "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
       "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
     },

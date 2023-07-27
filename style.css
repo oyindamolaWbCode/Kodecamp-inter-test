@@ -13,6 +13,7 @@
 
 .search-countries{
     padding: 50px 50px;
+    /* background-color: hsl(0, 0%, 100%); */
 } 
 
 .search-bar{
@@ -40,8 +41,21 @@ option:before {
     padding-left: 5px;
     color: #fff;
   }
-  
 
+ #countries{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 60px;
+  }
+  
+.country-category{
+    background-color: #fff;
+}
+
+.spinner{
+    display: flex;
+    justify-content: center;
+}
 
 /* media queries */
 
@@ -58,8 +72,13 @@ option:before {
     .search-input{
         margin-bottom: 30px;
     }
-    
+
     input[type= search]{
         width: 100%;
+    }
+
+    #countries{
+        display:block;
+        margin-top: 40px;
     }
 }
