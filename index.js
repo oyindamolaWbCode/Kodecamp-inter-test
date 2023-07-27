@@ -28,16 +28,35 @@ function show(data){
         <div class="country-category">
                 <div class="country-image">
                 <img src=${r.flags.png}
-                width="310" height="250"/>   
+                width="330" height="230"/>   
                 </div>
                 <div class="country-data">
-                    <h4>${r.name.official}</h4>
-                    <p>${r.population}</p>
-                    <p>${r.region}</p>
-                    <p>${r.capital}</p>
+                    <h3>${r.name.official}</h3>
+                    <p><b>Population</b>: ${r.population}</p>
+                    <p><b>Region</b>: ${r.region}</p>
+                    <p><b>Capital</b>: ${r.capital}</p>
                 </div>
             </div>
         `;
     }
     document.getElementById("countries").innerHTML = tab;
+}
+
+//searchInput
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', filterCountries);
+
+function filterCountries(){
+    const filterValue = searchInput.value.toLowerCase();
+    const countryCategories = document.getElementsByClassName('country-category');
+
+    for(const category of countryCategories){
+        const countryName = category.querySelector('h3').innerText.toLowerCase();
+        if(countryName.includes(filterValue)){
+            category.style.display = 'grid';
+            // category.style.grid-template-columns = 'auto auto auto auto';
+        } else{
+            category.style.display ='none';
+        }
+    }
 }
