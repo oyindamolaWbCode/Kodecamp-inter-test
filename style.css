@@ -22,7 +22,7 @@
 
 }
 
-input[type= text]{
+input[type= search]{
     padding: 13px 90px;
     border-radius: 6px;
     border: 2px solid hsl(0, 3%, 75%);
@@ -63,8 +63,24 @@ option:before {
     justify-content: center;
 }
 
+button{
+    padding: 10px 50px;
+}
 
+.single-page{
+    padding:60px 50px;
+}
 
+.country-section{
+    display: grid;
+    grid-template-columns: auto auto ;
+    margin-top: 60px;
+}
+
+.flags{
+    display: grid;
+    grid-template-columns: auto auto ;
+}
 /* media queries */
 
 @media (min-width: 374px) and (max-width: 480px){
@@ -81,7 +97,7 @@ option:before {
         margin-bottom: 30px;
     }
 
-    input[type= text]{
+    input[type= search]{
         width: 100%;
     }
 

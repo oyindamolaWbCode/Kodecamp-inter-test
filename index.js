@@ -22,10 +22,11 @@ function hideloader() {
 function show(data){
 
     let tab = '';
-
     for(const r of data){
+            
         tab += `
         <div class="country-category">
+        <a href="country.html" class="country-link" data-code="${r.cca2}">
                 <div class="country-image">
                 <img src=${r.flags.png}
                 width="330" height="230"/>   
@@ -36,9 +37,12 @@ function show(data){
                     <p><b>Region</b>: ${r.region}</p>
                     <p><b>Capital</b>: ${r.capital}</p>
                 </div>
+                </a>
             </div>
         `;
-    }
+  
+
+}
     document.getElementById("countries").innerHTML = tab;
 }
 
@@ -46,17 +50,28 @@ function show(data){
 const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', filterCountries);
 
+//Region 
+const regionFilter = document.getElementById('search');
+regionFilter.addEventListener('change', filterCountries);
+
 function filterCountries(){
+
     const filterValue = searchInput.value.toLowerCase();
     const countryCategories = document.getElementsByClassName('country-category');
 
     for(const category of countryCategories){
         const countryName = category.querySelector('h3').innerText.toLowerCase();
+
+        const countryRegion = category.querySelector('p:nth-child(3)').innerText
+        .replace('Region:', '').trim().toLowerCase();
+
         if(countryName.includes(filterValue)){
             category.style.display = 'grid';
             // category.style.grid-template-columns = 'auto auto auto auto';
         } else{
             category.style.display ='none';
         }
+
     }
 }
+
