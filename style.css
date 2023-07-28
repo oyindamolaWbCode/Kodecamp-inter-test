@@ -82,7 +82,6 @@ button{
     grid-template-columns: auto auto ;
 }
 
-
 a{
     text-decoration: none;
     color: #000;
@@ -124,5 +123,20 @@ a{
         width: 100%;
     }
 
+    #country-container{
+        display: block;
+    }
+
+    .single-page{
+        padding:20px 10px;
+    }
+
+    .flag-section img{
+        width: 100%;
+    }
+
+    .flags{
+        display: block;
+    }
     
 }

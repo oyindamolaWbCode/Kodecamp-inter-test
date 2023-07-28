@@ -8,6 +8,7 @@ async function getCountryDetails() {
   try {
     const response = await fetch(restapi_url);
     const data = await response.json();
+    console.log(data);
     // Display the country details
     showCountryDetails(data);
   } catch (error) {
@@ -25,11 +26,6 @@ function showCountryDetails(data) {
     // Display the country details
     const flagUrl = data.flags.png;
 
-    const official = data.name?.common;
-    console.log(official);
-    const nativeName = data.nativeName?.eng;
-    console.log(nativeName)
-
     const {
       population,
       region,
@@ -39,6 +35,8 @@ function showCountryDetails(data) {
       currencies,
       languages,
       borders,
+      nativeName,
+      name
     } = data;
 
     const languageNames = Object.values(languages);
@@ -49,7 +47,7 @@ function showCountryDetails(data) {
       </div>
       <div class="flag-summary">
         <div class="flag-segment">
-          <h1>${official}</h1>
+          <h1>${name}</h1>
           <div class="flags">
             <div class="flag-name">
                <p><b>Native Name: </b> ${nativeName}</p>
@@ -67,9 +65,7 @@ function showCountryDetails(data) {
                       .join(", ")
                   : "N/A"
               }</p>
-              <p><b>Languages: </b> ${
-                languageNames.length > 0 ? languageNames.join(", ") : "N/A"
-              }</p>
+              <p><b>Languages: </b> ${languages.map(data=>data.name).join(", ")}</p>
             </div>
           </div>
           <p><b>Border Countries</b>:</p>

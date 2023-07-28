@@ -46,7 +46,7 @@ function show(data){
     document.getElementById("countries").innerHTML = tab;
     // Add event listeners to country links
   const countryLinks = document.getElementsByClassName("country-link");
-  for (const link of countryLinks) {
+  for (const link of countryLinks){
     link.addEventListener("click", handleCountryLinkClick);
   }
 }
